@@ -81,10 +81,11 @@ public class PerformanceMailboxSettings {
     public ConnectionIMAPSettings getConnection(int index) {
         
         // Replace        
-        String newEmail = connectionIMAPTemplate.getEmailAddress().replaceFirst(INDEX_REPLACE, String.valueOf(index));
+        String newEmail = connectionIMAPTemplate.getIMAPEmailAddress().replaceFirst(INDEX_REPLACE, String.valueOf(index));
         
         // Return object with new mail address
-        return new ConnectionIMAPSettings(newEmail, null).setPassword(connectionIMAPTemplate.getPassword(false))
+        return new ConnectionIMAPSettings(newEmail, null).setIMAPPassword(connectionIMAPTemplate.getIMAPPassword(false))
+                                                   .setSMTPPassword(connectionIMAPTemplate.getSMTPPassword(false))
                                                    .setIMAPPort(connectionIMAPTemplate.getIMAPPort())
                                                    .setIMAPServer(connectionIMAPTemplate.getIMAPServer())
                                                    .setSMTPServer(connectionIMAPTemplate.getSMTPServer())

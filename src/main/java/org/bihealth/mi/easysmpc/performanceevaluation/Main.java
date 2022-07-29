@@ -64,8 +64,8 @@ public class Main {
 
         // Create connection settings
         ConnectionIMAPSettings connectionIMAPSettings = new ConnectionIMAPSettings(
-                "easy" + PerformanceMailboxSettings.INDEX_REPLACE + "@easysmpc.org", null).setPassword("12345").setSMTPServer("localhost")
-                        .setIMAPServer("localhost").setIMAPPort(993).setSMTPPort(465)
+                "easy" + PerformanceMailboxSettings.INDEX_REPLACE + "@easysmpc.org", null).setIMAPPassword("12345").setSMTPPassword("12345")
+                        .setSMTPServer("localhost").setIMAPServer("localhost").setIMAPPort(993).setSMTPPort(465)
                         .setAcceptSelfSignedCertificates(true).setSearchForProxy(false).setPerformanceListener(tracker);
 
 		// Create parameters

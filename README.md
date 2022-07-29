@@ -9,7 +9,7 @@
 1. Build the program with the command `mvn clean package`. The two warnings regarding the import of easy-smpc.jar can be ignored.
 1. Create the docker image by changing to the folder *docker* and executing the script `createDockerImage.sh` or `createDockerImage.bat` respectively
 1. Start the docker image with the script `startEvaluation.sh` or `startEvaluation.bat`. To change the network delay, the parameter *TC_DELAY_MS* can adapted before starting the script.
-1. The performance evaluation is running and can be inspected with the command `docker logs easy-eval`. The results can be accessed in the file */root/easy-smpc/result.csv* within the container e.g. by copying the file to the host with the command `docker cp easy-eval:/root/easy-smpc/performanceEvaluation.csv .`
+1. The performance evaluation is running and can be inspected with the command `docker logs easy-eval`. The results can be accessed in the file */root/easy-smpc/result.csv* within the container e.g. by copying the file to the host with the command `docker cp easy-eval:/root/easy-smpc/result.csv .`
 
 ## Troubleshooting
 ### Latency created with *tc*

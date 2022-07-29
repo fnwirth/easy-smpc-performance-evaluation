@@ -73,7 +73,7 @@ public class UserParticipating extends User {
                                                                                 participant.emailAddress),
                                         new MessageListener() {
                                             @Override
-                                            public void receive(org.bihealth.mi.easybus.Message message) {
+                                            public void receive(String message) {
                                                 // Stop interim bus
                                                 interimBus.stop();
                                                 
@@ -123,11 +123,11 @@ public class UserParticipating extends User {
      * 
      * @param message
      */
-    private void performInitialization(org.bihealth.mi.easybus.Message message) {
+    private void performInitialization(String message) {
 
         try {
             // Get data
-            String data = Message.deserializeMessage((String) message.getMessage()).data;
+            String data = Message.deserializeMessage(message).data;
 
             // Init model
             setModel(MessageInitial.getAppModel(MessageInitial.decodeMessage(Message.getMessageData(data))));
